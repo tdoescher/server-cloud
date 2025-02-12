@@ -9,7 +9,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     environment:
-      PORT: "45876"
+      PORT: 45876
       KEY: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKWHAJwMDs7EF9WA2z6wheZPXeV7u3o7ZhLPw/vaUNk9"
   portainer_agent:
     container_name: portainer_agent
