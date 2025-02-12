@@ -1,0 +1,9 @@
+# App
+*.ign
+
+# macOS
+.nova
+.vscode
+.DS_Store*
+Icon^M
+._*
