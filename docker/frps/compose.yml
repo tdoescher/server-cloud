@@ -1,0 +1,9 @@
+services:
+  frps:
+    container_name: frps
+    build: ./
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+      - 7000:7000
