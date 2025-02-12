@@ -1,9 +1,9 @@
 services:
   frps:
     container_name: frps
-    build: ./
+    image: snowdreamtech/frps
+    command: "--vhost-https-port 443 --token ###################"
     restart: always
     ports:
-      - 80:80
       - 443:443
       - 7000:7000
