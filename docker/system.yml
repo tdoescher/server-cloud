@@ -1,0 +1,24 @@
+services:
+  beszel-agent:
+    container_name: beszel_agent
+    image: henrygd/beszel-agent
+    restart: always
+    privileged: true
+    ports:
+      - 45876:45876
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      PORT: "45876"
+      KEY: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKWHAJwMDs7EF9WA2z6wheZPXeV7u3o7ZhLPw/vaUNk9"
+  portainer_agent:
+    container_name: portainer_agent
+    image: portainer/agent
+    restart: always
+    privileged: true
+    ports:
+      - 9001:9001
+    volumes:
+      - /:/host
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/docker/volumes:/var/lib/docker/volumes
